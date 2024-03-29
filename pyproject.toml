@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "poc-kijkdoos-wasm"
+version = "0.1.0"
+description = ""
+authors = [""]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy = "^1.26.4"
+onnxruntime = "^1.17.1"
+torch = "^2.2.2"
+skl2onnx = "^1.16.0"
+scikit-learn = "^1.4.1.post1"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.3.3"
+pre-commit = "^3.6.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+
+
+[tool.ruff.lint]
+select = ["I", "SIM", "B", "UP", "F", "E"]
+ignore = [] # List any rules to be ignored, currently empty.
+
+# Allow auto-fixing of all enabled rules when using the `--fix` option.
+fixable = ["ALL"]
+unfixable = [] # Specify rules that cannot be auto-fixed, if any.
+
+# Define a regex pattern for allowed unused variables (typically underscore-prefixed).
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.poetry.scripts]
+pre-commit = 'pre-commit run --all-files:tad'
+
+[tool.ruff.format]
+# Enforce double quotes for strings, following Black's style.
+quote-style = "double"
+
+# Use spaces for indentation, in line with Black's formatting style.
+indent-style = "space"
+
+# Keep magic trailing commas, a feature of Black's formatting.
+skip-magic-trailing-comma = false
+
+# Automatically detect and use the appropriate line ending style.
+line-ending = "auto"
