@@ -21,61 +21,55 @@
         </ul>
     </div>
 </nav>
-<div class="container mt-3">
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#generalInfoTab">General Information</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#inferenceTab">Inference</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#cardTab">Card</a>
-        </li>
-    </ul>
-    <div class="tab-content">
-        <!-- General Information Tab -->
-        <div id="generalInfoTab" class="tab-pane fade ">
-            <div>
-                <h3>General information</h3>
+<div class="container">
+    <h1 id="title"></h1>
+    <div class="container mt-3">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#generalInfoTab">General Information</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#inferenceTab">Inference</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#cardTab">Model card</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <!-- General Information Tab -->
+            <div id="generalInfoTab" class="tab-pane fade ">
+                <div id="generalContent"></div>
             </div>
-            <div id="generalContent"></div>
-        </div>
-
-        <!-- Inference Tab -->
-        <div id="inferenceTab" class="tab-pane fade show active">
-            <h2>Inference</h2>
-            <div>
-                Model Url: <input label="Model url" type="text" readonly id="modelurl"
-                                  class="form-control form-control-sm"/>
+            <!-- Inference Tab -->
+            <div id="inferenceTab" class="tab-pane fade show active">
+                <div>
+                    <h4>Model Url</h4>
+                    <input type="text" readonly id="modelurl" class="form-control form-control-sm"/>
+                </div>
+                <div>
+                    <h4>Input</h4>
+                    <div id="inputWrapper"></div>
+                </div>
+                <button id="runInference" class="btn btn-primary mt-3">Run Inference</button>
+                <div class="mt-3">
+                    <h4>Output</h4>
+                    <span id="label" class="badge badge-success"></span>
+                </div>
+                <div class="card mt-3 text-muted bg-light">
+                    <div class="card-header">Output Probabilities</div>
+                    <div class="card-body" id="outputContainer"></div>
+                </div>
+                <div class="alert alert-danger mt-3" id="error" style="display: none;"></div>
             </div>
-            <div>
-                <h4>Input</h4>
-                <div id="inputWrapper"></div>
-            </div>
-            <button id="runInference" class="btn btn-primary mt-3">Run Inference</button>
-
-            <div class="mt-3">
-                <h4>Output</h4>
-                <span id="label" class="badge badge-success"></span>
-            </div>
-
-            <div class="card mt-3 text-muted bg-light">
-                <div class="card-header">Output Probabilities</div>
-                <div class="card-body" id="outputContainer"></div>
-            </div>
-            <div class="alert alert-danger mt-3" id="error" style="display: none;"></div>
-        </div>
-
-        <!-- Card Tab -->
-        <div id="cardTab" class="tab-pane fade">
-            <div>
-                <h3>Model Card</h3>
-                Modelcard Url: <input label="Model url" type="text" readonly id="modelcardurl"
-                                      class="form-control form-control-sm"/>
-                Modelcard:
-                <textarea id="modelcardraw" class="form-control" rows="40" readonly></textarea>
-                <textarea id="modelcard" class="form-control collapse" rows="10" readonly></textarea>
+            <!-- Card Tab -->
+            <div id="cardTab" class="tab-pane fade">
+                <div>
+                    <h4>Model card Url</h4>
+                    <input type="text" readonly id="modelcardurl" class="form-control form-control-sm"/>
+                    <h4>Model card</h4>
+                    <textarea id="modelcardraw" class="form-control" rows="40" readonly></textarea>
+                    <textarea id="modelcard" class="form-control collapse" rows="10" readonly></textarea>
+                </div>
             </div>
         </div>
     </div>

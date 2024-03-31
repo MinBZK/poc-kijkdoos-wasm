@@ -1,7 +1,7 @@
 import * as yaml from "https://cdn.skypack.dev/js-yaml";
 import showdown from "https://cdn.skypack.dev/showdown";
 
-async function loadModelCard(modelPath) {
+async function loadModelCard(modelPath, title) {
     const response = await fetch(modelPath);
     if (!response.ok) {
         throw new Error('Failed to fetch model card: ' + response.status);
@@ -24,6 +24,8 @@ async function loadModelCard(modelPath) {
     if (!modelCard) {
         throw new Error('Failed to parse YAML');
     }
+
+    document.getElementById('title').innerText = title;
 
     const modelName = modelCard.model;
     const pathFromModelPath = modelPath.substring(0, modelPath.lastIndexOf('/') + 1);
@@ -110,7 +112,7 @@ fetch('register.yaml')
         });
 
         if (models.length > 0) {
-            loadModelCard(models[0].url);
+            loadModelCard(models[0].url, models[0].name);
         }
     })
     .catch(error => console.error('Error fetching YAML:', error));
@@ -120,6 +122,7 @@ const modelCardDropdown = document.getElementById('modelCardDropdown');
 modelCardDropdown.addEventListener('click', async (event) => {
     if (event.target.tagName === 'A') {
         const modelPath = event.target.dataset.model;
-        await loadModelCard(modelPath);
+        const title = event.target.textContent; // Get the title from the clicked dropdown item
+        await loadModelCard(modelPath, title); // Call loadModelCard() with the modelPath and title
     }
 });
