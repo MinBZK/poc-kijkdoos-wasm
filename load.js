@@ -90,10 +90,30 @@ async function loadModelCard(modelPath) {
     return modelCard;
 }
 
+fetch('register.yaml')
+    .then(response => response.text())
+    .then(yamlString => {
+        // Parse YAML
+        const models = yaml.load(yamlString);
 
-const defaultModelcard = 'https://raw.githubusercontent.com/MinBZK/poc-kijkdoos-wasm-models/main/logres_iris/iris_modelcard.md';
+        // Get the dropdown menu element
+        const dropdownMenu = document.getElementById('modelCardDropdown');
 
-await loadModelCard(defaultModelcard);
+        // Iterate through models and create dropdown items
+        models.forEach(model => {
+            const dropdownItem = document.createElement('a');
+            dropdownItem.classList.add('dropdown-item');
+            dropdownItem.href = '#';
+            dropdownItem.setAttribute('data-model', model.url); // Assuming each model object has a 'url' property
+            dropdownItem.textContent = model.name; // Assuming each model object has a 'name' property
+            dropdownMenu.appendChild(dropdownItem);
+        });
+
+        if (models.length > 0) {
+            loadModelCard(models[0].url);
+        }
+    })
+    .catch(error => console.error('Error fetching YAML:', error));
 
 const modelCardDropdown = document.getElementById('modelCardDropdown');
 

@@ -15,9 +15,7 @@
                     Select Model Card
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" id="modelCardDropdown">
-                    <a class="dropdown-item" href="#" data-model="https://raw.githubusercontent.com/MinBZK/poc-kijkdoos-wasm-models/main/logres_iris/iris_modelcard.md">Logres - Iris</a>
-                    <a class="dropdown-item" href="#" data-model="https://raw.githubusercontent.com/MinBZK/poc-kijkdoos-wasm-models/main/breast_cancer_random_forest/random_forest_breast_cancer_modelcard.md">Random Forest - Breast Cancer</a>
-                    <a class="dropdown-item" href="#" data-model="https://raw.githubusercontent.com/MinBZK/poc-kijkdoos-wasm-models/main/wine_pytorch/wine_modelcard.md">Pytorch - Wine</a>
+                    <!-- Dropdown items will be populated dynamically here -->
                 </div>
             </li>
         </ul>
@@ -48,7 +46,8 @@
         <div id="inferenceTab" class="tab-pane fade show active">
             <h2>Inference</h2>
             <div>
-                Model Url: <input label="Model url" type="text" readonly id="modelurl" class="form-control form-control-sm" />
+                Model Url: <input label="Model url" type="text" readonly id="modelurl"
+                                  class="form-control form-control-sm"/>
             </div>
             <div>
                 <h4>Input</h4>
@@ -72,7 +71,8 @@
         <div id="cardTab" class="tab-pane fade">
             <div>
                 <h3>Model Card</h3>
-                Modelcard Url: <input label="Model url" type="text" readonly id="modelcardurl" class="form-control form-control-sm" />
+                Modelcard Url: <input label="Model url" type="text" readonly id="modelcardurl"
+                                      class="form-control form-control-sm"/>
                 Modelcard:
                 <textarea id="modelcardraw" class="form-control" rows="40" readonly></textarea>
                 <textarea id="modelcard" class="form-control collapse" rows="10" readonly></textarea>
