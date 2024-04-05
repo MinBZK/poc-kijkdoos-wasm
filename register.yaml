@@ -1,0 +1,6 @@
+- name: Logres - Iris
+  url: https://raw.githubusercontent.com/MinBZK/poc-kijkdoos-wasm-models/main/logres_iris/iris_modelcard.md
+- name: Random Forest - Breast Cancer
+  url: https://raw.githubusercontent.com/MinBZK/poc-kijkdoos-wasm-models/main/breast_cancer_random_forest/random_forest_breast_cancer_modelcard.md
+- name: Pytorch - Wine
+  url: https://raw.githubusercontent.com/MinBZK/poc-kijkdoos-wasm-models/main/wine_pytorch/wine_modelcard.md

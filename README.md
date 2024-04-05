@@ -1,1 +1,1 @@
-# Proof of concept for running mdoels in the browser
+# Proof of concept for running models in the browser
