@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 numpy = "^1.26.4"
-onnxruntime = "^1.17.1"
+onnxruntime = "^1.17.3"
 torch = "^2.2.2"
 skl2onnx = "^1.16.0"
 scikit-learn = "^1.4.2"
