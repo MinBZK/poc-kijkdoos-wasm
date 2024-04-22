@@ -14,7 +14,7 @@ skl2onnx = "^1.16.0"
 scikit-learn = "^1.4.2"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.3.7"
+ruff = "^0.4.1"
 pre-commit = "^3.6.2"
 
 [build-system]
